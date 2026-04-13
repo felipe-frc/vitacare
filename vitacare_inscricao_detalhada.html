@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VitaCare | Checkout Inteligente</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/vitacare_inscricao_detalhada.css">
+</head>
+<body>
+
+
+  <main class="container">
+    <!-- Seletor de Plano para demonstração -->
+    <div style="background: white; padding: 15px; border-radius: 12px; margin-bottom: 30px; border: 1px solid var(--borda); display: flex; align-items: center; gap: 15px;">
+      <span style="font-weight: 800; font-size: 0.9rem;">Simular Plano:</span>
+      <select id="plan-selector" data-plan-selector="true" style="width: auto; padding: 8px 15px;">
+        <option value="basic">VitaCare Basic</option>
+        <option value="plus" selected>VitaCare Plus</option>
+        <option value="premium">VitaCare Premium</option>
+      </select>
+    </div>
+
+    <div class="checkout-grid">
+      
+      <!-- Detalhes Dinâmicos do Plano -->
+      <aside class="plan-details-card">
+        <span class="plan-badge">Plano Selecionado</span>
+        <h2 class="plan-title" id="display-plan-name">VitaCare Plus</h2>
+        <p class="plan-price-summary" id="display-plan-price">R$ 349,00 <span style="font-size: 0.8rem; color: var(--texto-corpo); font-weight: 500;">/mês por pessoa</span></p>
+
+        <div class="detail-section">
+          <h3><i class="fa-solid fa-clock"></i> Carências</h3>
+          <div class="detail-list" id="display-carencias">
+            <!-- Inserido via JS -->
+          </div>
+        </div>
+
+        <div class="detail-section">
+          <h3><i class="fa-solid fa-stethoscope"></i> Especialidades</h3>
+          <div class="coverage-tags" id="display-tags">
+            <!-- Inserido via JS -->
+          </div>
+        </div>
+
+        <div class="detail-section">
+          <h3><i class="fa-solid fa-flask"></i> Exames Incluídos</h3>
+          <p style="font-size: 0.8rem; margin-bottom: 8px;" id="display-exames">Carregando...</p>
+        </div>
+
+        <div style="background: #f8fafc; padding: 15px; border-radius: 12px; font-size: 0.8rem;">
+          <p id="display-diferencial">Carregando diferencial...</p>
+        </div>
+      </aside>
+
+      <!-- Formulário de Inscrição -->
+      <section class="enrollment-form">
+        <div class="step-indicator">
+          <div class="step active" id="step-dot-1"></div>
+          <div class="step" id="step-dot-2"></div>
+          <div class="step" id="step-dot-3"></div>
+        </div>
+
+        <!-- Etapa 1: Dados do Titular -->
+        <div class="form-section active" id="section-1">
+          <div class="section-header">
+            <h2>Dados do Titular</h2>
+            <p style="font-size: 0.9rem;">Preencha as informações de quem será o responsável pelo plano.</p>
+          </div>
+          <div class="form-grid">
+            <div class="form-group full">
+              <label>Nome Completo</label>
+              <input type="text" placeholder="Nome impresso no documento">
+            </div>
+            <div class="form-group">
+              <label>CPF</label>
+              <input type="text" placeholder="000.000.000-00">
+            </div>
+            <div class="form-group">
+              <label>Data de Nascimento</label>
+              <input type="date">
+            </div>
+            <div class="form-group full">
+              <label>Nome da Mãe</label>
+              <input type="text" placeholder="Conforme documento">
+            </div>
+            <div class="form-group">
+              <label>Celular / WhatsApp</label>
+              <input type="text" placeholder="(00) 00000-0000">
+            </div>
+            <div class="form-group">
+              <label>Gênero</label>
+              <select>
+                <option>Masculino</option>
+                <option>Feminino</option>
+                <option>Prefiro não dizer</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-actions">
+            <div></div> <!-- Espaçador -->
+            <button class="btn btn-next" type="button" data-step="2">Continuar para Dependentes <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </div>
+
+        <!-- Etapa 2: Dependentes -->
+        <div class="form-section" id="section-2">
+          <div class="section-header">
+            <h2>Dependentes</h2>
+            <p style="font-size: 0.9rem;">Deseja incluir familiares no seu plano? (Opcional)</p>
+          </div>
+          
+          <div id="dependents-container"></div>
+
+          <div class="add-dependent-btn" id="addDependentBtn" data-clickable="true">
+            <i class="fa-solid fa-plus-circle"></i> Adicionar Dependente
+          </div>
+
+          <div style="background: var(--azul-suave); padding: 15px; border-radius: 12px; font-size: 0.85rem; color: var(--azul-primario); margin-bottom: 20px;">
+            <i class="fa-solid fa-info-circle"></i> Dependentes possuem os mesmos benefícios e carências que o titular.
+          </div>
+
+          <div class="form-actions">
+            <button class="btn btn-prev" type="button" data-step="1">Voltar</button>
+            <button class="btn btn-next" type="button" data-step="3">Revisar Inscrição <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </div>
+
+        <!-- Etapa 3: Revisão e Pagamento -->
+        <div class="form-section" id="section-3">
+          <div class="section-header">
+            <h2>Resumo da Inscrição</h2>
+            <p style="font-size: 0.9rem;">Confira os valores finais antes de confirmar.</p>
+          </div>
+          
+          <div style="border: 2px solid var(--borda); border-radius: 20px; padding: 24px; margin-bottom: 24px;">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 12px;">
+              <span id="summary-titular-label">Mensalidade Titular</span>
+              <span style="font-weight: 800;" id="summary-titular-price">R$ 0,00</span>
+            </div>
+            <div id="summary-dependents"></div>
+            <div style="display: flex; justify-content: space-between; margin-top: 20px; padding-top: 20px; border-top: 2px solid var(--borda); font-size: 1.2rem;">
+              <span style="font-weight: 800; color: var(--texto-titulo);">Valor Total Mensal</span>
+              <span style="font-weight: 800; color: var(--vermelho-vibrante);" id="total-price">R$ 0,00</span>
+            </div>
+          </div>
+
+          <div class="form-group full">
+            <label>Método de Pagamento</label>
+            <select>
+              <option>Cartão de Crédito (Ativação Imediata)</option>
+              <option>Boleto Bancário</option>
+              <option>Pix (5% de desconto)</option>
+            </select>
+          </div>
+
+          <div class="form-actions">
+            <button class="btn btn-prev" data-step="2">Voltar</button>
+            <button class="btn btn-next" type="button" style="background: #10b981;" data-nav="vitacare_dashboard_usuario.html">Finalizar e Ativar Plano <i class="fa-solid fa-check-circle"></i></button>
+          </div>
+        </div>
+
+      </section>
+    </div>
+  </main>
+  <script src="js/vitacare_inscricao_detalhada.js"></script>
+
+  <script src="js/global.js"></script>
+  <script src="navbar.js"></script>
+</body>
+</html>

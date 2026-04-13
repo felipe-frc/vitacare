@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VitaCare | Agendar Consulta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/vitacare_consultas_disponibilidade.css">
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <a href="vitacare_new_home.html" class="sidebar-logo">
+      <div class="logo-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+      <div class="logo-text">
+        <span style="font-size: 1.2rem; font-weight: 800; display: block;">VitaCare</span>
+        <span style="font-size: 0.6rem; opacity: 0.6; text-transform: uppercase; color: var(--texto-corpo);">Beneficiário</span>
+      </div>
+    </a>
+
+    <nav class="nav-menu">
+      <li class="nav-item"><a href="vitacare_dashboard_usuario.html" class="nav-link"><i class="fa-solid fa-house"></i> <span>Início</span></a></li>
+      <li class="nav-item"><a href="vitacare_dashboard_usuario.html" class="nav-link active"><i class="fa-solid fa-calendar-check"></i> <span>Consultas</span></a></li>
+      <li class="nav-item"><a href="vitacare_dashboard_usuario.html" class="nav-link"><i class="fa-solid fa-credit-card"></i> <span>Pagamentos</span></a></li>
+      <li class="nav-item"><a href="vitacare_dashboard_usuario.html" class="nav-link"><i class="fa-solid fa-hospital"></i> <span>Rede Médica</span></a></li>
+      <li class="nav-item"><a href="vitacare_dashboard_usuario.html" class="nav-link"><i class="fa-solid fa-star"></i> <span>Avaliações</span></a></li>
+    </nav>
+
+    <div style="padding-top: 20px; border-top: 1px solid var(--borda);">
+      <a href="vitacare_dashboard_usuario.html" class="nav-link" style="color: #64748b;"><i class="fa-solid fa-gear"></i> <span>Configurações</span></a>
+      <a href="index.html" class="nav-link" style="color: #ef4444;"><i class="fa-solid fa-right-from-bracket"></i> <span>Sair</span></a>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <header class="header-top">
+      <div class="welcome">
+        <h1>Agendar Consulta</h1>
+        <p>Escolha um médico e horário disponível</p>
+      </div>
+      <button class="btn-back" type="button" data-back="true"><i class="fa-solid fa-arrow-left"></i> Voltar</button>
+    </header>
+
+    <!-- Filtros -->
+    <div class="card">
+      <div class="card-title">Filtrar Médicos</div>
+      <div class="filters">
+        <div class="filter-group">
+          <label>Especialidade</label>
+          <select id="specialtyFilter">
+            <option value="">Todas as Especialidades</option>
+            <option value="cardiologia">Cardiologia</option>
+            <option value="dermatologia">Dermatologia</option>
+            <option value="clinica-geral">Clínica Geral</option>
+            <option value="pediatria">Pediatria</option>
+            <option value="ortopedia">Ortopedia</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label>Data Preferida</label>
+          <input type="date" id="dateFilter">
+        </div>
+        <div class="filter-group">
+          <label>Período</label>
+          <select id="periodFilter">
+            <option value="">Qualquer Período</option>
+            <option value="morning">Manhã (08h - 12h)</option>
+            <option value="afternoon">Tarde (13h - 18h)</option>
+            <option value="evening">Noite (18h - 21h)</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- Médicos Disponíveis -->
+    <div class="card">
+      <div class="card-title">Médicos Disponíveis</div>
+      <div class="doctors-grid" id="doctorsContainer">
+        <!-- Preenchido por JavaScript -->
+      </div>
+    </div>
+  </main>
+  <script src="js/vitacare_consultas_disponibilidade.js"></script>
+
+  <script src="js/global.js"></script>
+  <script src="navbar.js"></script>
+</body>
+</html>

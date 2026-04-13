@@ -1,0 +1,124 @@
+:root {
+  /* Cores Primárias - Azul Marinho Profundo */
+  --azul-primario: #0f2942;
+  --azul-secundario: #1a3f5a;
+  --azul-claro: #2d5a7b;
+  
+  /* Cores de Destaque - Vermelho Vibrante */
+  --vermelho-vibrante: #e63946;
+  --vermelho-hover: #d62828;
+  
+  /* Cores Neutras */
+  --branco: #ffffff;
+  --fundo: #f8f9fa;
+  --fundo-escuro: #f0f2f5;
+  --texto-titulo: #0f2942;
+  --texto-corpo: #4a5568;
+  --texto-suave: #718096;
+  --borda: #e2e8f0;
+  --borda-suave: #edf2f7;
+  
+  /* Sombras */
+  --sombra-suave: 0 2px 8px rgba(15, 41, 66, 0.08);
+  --sombra-media: 0 8px 16px rgba(15, 41, 66, 0.12);
+  --sombra-forte: 0 16px 32px rgba(15, 41, 66, 0.16);
+  
+  /* Transições */
+  --transicao: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--fundo);
+  color: var(--texto-corpo);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.page-shell {
+  min-height: 100vh;
+}
+
+.section-hidden {
+  display: none !important;
+}
+
+.app-toast-container {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.app-toast {
+  min-width: 280px;
+  max-width: 420px;
+  background: #fff;
+  border: 1px solid var(--borda);
+  border-left: 4px solid var(--azul-primario);
+  border-radius: 8px;
+  padding: 14px 16px;
+  box-shadow: var(--sombra-media);
+  animation: toast-in .22s ease;
+}
+
+.app-toast--success { border-left-color: #10b981; }
+.app-toast--error { border-left-color: #ef4444; }
+.app-toast--warning { border-left-color: #f59e0b; }
+
+.app-toast__title {
+  font-weight: 700;
+  color: var(--texto-titulo);
+  margin-bottom: 2px;
+}
+
+.app-toast__message {
+  font-size: .92rem;
+}
+
+[data-clickable="true"] {
+  cursor: pointer;
+}
+
+@keyframes toast-in {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}

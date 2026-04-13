@@ -1,0 +1,116 @@
+    :root {
+      --coral: #f56372;
+      --azul-escuro: #1e293b;
+      --fundo-claro: #fafcfe;
+      --branco: #ffffff;
+      --texto-corpo: #475569;
+      --texto-suave: #64748b;
+      --borda: #e2e8f0;
+      --sombra-suave: 0 2px 8px rgba(30, 41, 59, 0.08);
+      --sombra-media: 0 8px 16px rgba(30, 41, 59, 0.12);
+      --sombra-forte: 0 16px 32px rgba(245, 99, 114, 0.15);
+      --transicao: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: "Plus Jakarta Sans", sans-serif; }
+    body { background: var(--fundo-claro); color: var(--texto-corpo); display: flex; min-height: 100vh; }
+
+    /* Sidebar do Usuário */
+    .sidebar { width: 280px; background: white; border-right: 1px solid var(--borda); padding: 30px 20px; display: flex; flex-direction: column; position: fixed; height: 100vh; z-index: 100; }
+    .sidebar-logo { display: flex; align-items: center; gap: 12px; margin-bottom: 40px; text-decoration: none; color: var(--coral); }
+    .logo-icon { width: 35px; height: 35px; background: linear-gradient(135deg, var(--coral), #ff7a8a); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; color: white; }
+    
+    .nav-menu { list-style: none; flex-grow: 1; }
+    .nav-item { margin-bottom: 8px; }
+    .nav-link { display: flex; align-items: center; gap: 12px; padding: 14px 18px; color: #64748b; text-decoration: none; border-radius: 14px; font-weight: 600; transition: var(--transicao); }
+    .nav-link:hover, .nav-link.active { background: rgba(245, 99, 114, 0.1); color: var(--coral); }
+    .nav-link.active { font-weight: 800; }
+
+    /* Main Content */
+    .main-content { margin-left: 280px; flex-grow: 1; padding: 40px; }
+    .header-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 32px; }
+    .welcome h1 { font-size: 1.6rem; font-weight: 800; color: var(--azul-escuro); letter-spacing: -0.5px; }
+    .welcome p { font-size: 0.95rem; color: #64748b; }
+
+    .user-profile { display: flex; align-items: center; gap: 12px; }
+    .notification-btn { width: 45px; height: 45px; background: white; border: 1px solid var(--borda); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--texto-suave); position: relative; cursor: pointer; transition: var(--transicao); }
+    .notification-btn:hover { border-color: var(--coral); color: var(--coral); }
+    .notification-dot { position: absolute; top: 12px; right: 12px; width: 8px; height: 8px; background: var(--coral); border-radius: 50%; border: 2px solid white; }
+
+    /* Grid Layout */
+    .dashboard-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 24px; }
+
+    /* Cards */
+    .card { background: white; border-radius: 24px; padding: 24px; box-shadow: var(--sombra-media); border: 1px solid var(--borda); margin-bottom: 24px; transition: var(--transicao); }
+    .card:hover { box-shadow: var(--sombra-forte); }
+    .card-title { font-size: 1.1rem; font-weight: 800; color: var(--azul-escuro); margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; }
+    .card-title a { font-size: 0.8rem; color: var(--coral); text-decoration: none; font-weight: 700; transition: color 0.3s ease; }
+    .card-title a:hover { color: #ff7a8a; }
+
+    /* Próximas Consultas */
+    .appointment-item { display: flex; align-items: center; gap: 16px; padding: 16px; background: var(--fundo-claro); border-radius: 16px; margin-bottom: 12px; transition: var(--transicao); border: 1px solid var(--borda); }
+    .appointment-item:hover { transform: translateY(-4px); box-shadow: var(--sombra-media); border-color: var(--coral); }
+    .date-badge { width: 50px; height: 50px; background: white; border-radius: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: var(--sombra-suave); border: 1px solid var(--borda); }
+    .date-badge span:first-child { font-size: 0.7rem; font-weight: 800; color: var(--coral); text-transform: uppercase; }
+    .date-badge span:last-child { font-size: 1.1rem; font-weight: 800; color: var(--azul-escuro); }
+
+    /* Pagamentos */
+    .payment-item { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--borda); }
+    .payment-status { padding: 4px 10px; border-radius: 100px; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; }
+    .status-paid { background: #dcfce7; color: #166534; }
+    .status-pending { background: rgba(245, 99, 114, 0.15); color: var(--coral); }
+
+    /* Rede Credenciada */
+    .partner-list { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .partner-card { padding: 16px; border: 1px solid var(--borda); border-radius: 16px; text-align: center; transition: var(--transicao); }
+    .partner-card:hover { border-color: var(--coral); background: rgba(245, 99, 114, 0.05); transform: translateY(-4px); }
+    .partner-card i { font-size: 1.5rem; color: var(--coral); margin-bottom: 10px; }
+
+    /* Plan Info Card */
+    .plan-info { background: linear-gradient(135deg, var(--coral), #ff7a8a); color: white; border-radius: 24px; padding: 30px; position: relative; overflow: hidden; box-shadow: var(--sombra-forte); }
+    .plan-info::after { content: ''; position: absolute; top: -20%; right: -10%; width: 150px; height: 150px; background: rgba(255,255,255,0.1); border-radius: 50%; }
+    .plan-info h2 { font-size: 1.4rem; font-weight: 800; margin-bottom: 5px; letter-spacing: -0.5px; }
+    .plan-info p { opacity: 0.9; font-size: 0.9rem; margin-bottom: 20px; }
+    .btn-white { background: white; color: var(--coral); border: none; padding: 10px 20px; border-radius: 12px; font-weight: 800; cursor: pointer; font-size: 0.85rem; transition: var(--transicao); }
+    .btn-white:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(245, 99, 114, 0.2); }
+
+    /* Sections Control */
+    .dashboard-section { display: none; }
+    .dashboard-section.active { display: block; animation: fadeIn 0.4s ease; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* Avaliações */
+    .review-item { margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid var(--borda); }
+    .review-item:last-child { border-bottom: none; }
+    .stars { color: #fbbf24; font-size: 0.8rem; margin-bottom: 5px; }
+
+    /* Pagamentos Section */
+    .payment-section { margin-bottom: 24px; }
+    .payment-section h3 { font-size: 1rem; font-weight: 800; color: var(--azul-escuro); margin-bottom: 16px; }
+    .payment-list { display: grid; gap: 12px; }
+
+    @media (max-width: 1024px) {
+      .sidebar { width: 80px; padding: 20px 10px; }
+      .sidebar-logo span, .nav-link span { display: none; }
+      .main-content { margin-left: 80px; padding: 30px 20px; }
+      .dashboard-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .sidebar { width: 70px; }
+      .main-content { margin-left: 70px; padding: 20px 16px; }
+      .header-top { flex-direction: column; align-items: flex-start; gap: 16px; }
+      .welcome h1 { font-size: 1.4rem; }
+      .card { padding: 16px; }
+      .card-title { font-size: 1rem; }
+      .appointment-item { flex-direction: column; align-items: flex-start; }
+      .partner-list { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 640px) {
+      .sidebar { width: 60px; padding: 15px 10px; }
+      .main-content { margin-left: 60px; padding: 16px 12px; }
+      .welcome h1 { font-size: 1.2rem; }
+      .card { padding: 12px; margin-bottom: 16px; }
+      .card-title { font-size: 0.9rem; margin-bottom: 12px; }
+    }

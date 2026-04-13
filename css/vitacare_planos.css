@@ -1,0 +1,127 @@
+:root {
+      --azul-primario: #27586a;
+      --azul-suave: #d9f1f8;
+      --azul-accent: #a8d6e4;
+      --vermelho-vibrante: #d84d5d;
+      --vermelho-hover: #c73d4e;
+      --branco: #ffffff;
+      --fundo: #fcfdfe;
+      --texto-corpo: #475569;
+      --texto-titulo: #1e293b;
+      --borda: #e2e8f0;
+      --sombra: 0 20px 50px rgba(39, 88, 106, 0.08);
+      --transicao: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: "Plus Jakarta Sans", sans-serif; }
+    body { background: var(--fundo); color: var(--texto-corpo); line-height: 1.6; }
+
+    .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+    /* Header Reutilizado da Home */
+    .header { background: white; border-bottom: 1px solid var(--borda); padding: 20px 0; margin-bottom: 60px; }
+    .header-content { display: flex; align-items: center; justify-content: space-between; }
+    .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--azul-primario); }
+    .logo-mark { width: 40px; height: 40px; background: var(--azul-suave); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
+
+    /* Page Intro */
+    .intro { text-align: center; margin-bottom: 80px; }
+    .intro h1 { font-size: 3rem; font-weight: 800; color: var(--texto-titulo); margin-bottom: 20px; letter-spacing: -1.5px; }
+    .intro p { font-size: 1.2rem; max-width: 600px; margin: 0 auto; color: var(--texto-corpo); }
+
+    /* Plans Grid */
+    .plans-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-bottom: 100px; }
+
+    .plan-card {
+      background: white;
+      border-radius: 32px;
+      padding: 48px 32px;
+      border: 2px solid var(--borda);
+      transition: var(--transicao);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .plan-card:hover { transform: translateY(-12px); border-color: var(--azul-accent); box-shadow: var(--sombra); }
+
+    /* Destaque para o Plano Plus */
+    .plan-card.featured { border-color: var(--vermelho-vibrante); transform: scale(1.05); z-index: 10; }
+    .plan-card.featured:hover { transform: scale(1.05) translateY(-12px); }
+    .featured-badge {
+      position: absolute;
+      top: 24px;
+      right: -35px;
+      background: var(--vermelho-vibrante);
+      color: white;
+      padding: 8px 40px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      transform: rotate(45deg);
+      text-transform: uppercase;
+    }
+
+    .plan-icon {
+      width: 64px;
+      height: 64px;
+      background: var(--azul-suave);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      color: var(--azul-primario);
+      margin-bottom: 32px;
+    }
+
+    .plan-card.featured .plan-icon { background: #ffebee; color: var(--vermelho-vibrante); }
+
+    .plan-name { font-size: 1.5rem; font-weight: 800; color: var(--texto-titulo); margin-bottom: 8px; }
+    .plan-price { font-size: 2.5rem; font-weight: 800; color: var(--texto-titulo); margin-bottom: 32px; }
+    .plan-price span { font-size: 1rem; color: var(--texto-corpo); font-weight: 500; }
+
+    .feature-list { list-style: none; margin-bottom: 40px; flex-grow: 1; }
+    .feature-item { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 18px; font-size: 0.95rem; font-weight: 600; }
+    .feature-item i { color: #10b981; margin-top: 4px; }
+    .feature-item.highlight { color: var(--azul-primario); }
+
+    .btn-select {
+      width: 100%;
+      padding: 18px;
+      border-radius: 16px;
+      border: 2px solid var(--azul-accent);
+      background: transparent;
+      color: var(--azul-primario);
+      font-weight: 800;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: var(--transicao);
+      text-align: center;
+      text-decoration: none;
+    }
+
+    .plan-card.featured .btn-select { background: var(--vermelho-vibrante); color: white; border: none; }
+    .btn-select:hover { background: var(--azul-primario); color: white; border-color: var(--azul-primario); }
+    .plan-card.featured .btn-select:hover { background: var(--vermelho-hover); }
+
+    /* Comparison Table Section */
+    .comparison-section { background: white; padding: 100px 0; border-radius: 60px; margin-bottom: 100px; box-shadow: var(--sombra); }
+    .comparison-title { text-align: center; margin-bottom: 60px; }
+    .comparison-title h2 { font-size: 2.2rem; font-weight: 800; color: var(--texto-titulo); }
+
+    table { width: 100%; border-collapse: collapse; }
+    th { padding: 24px; text-align: center; font-size: 1.1rem; font-weight: 800; color: var(--texto-titulo); border-bottom: 2px solid var(--borda); }
+    td { padding: 20px; text-align: center; border-bottom: 1px solid var(--borda); font-weight: 600; font-size: 0.95rem; }
+    .feature-name { text-align: left; color: var(--texto-titulo); }
+    .check-icon { color: #10b981; font-size: 1.2rem; }
+    .dash-icon { color: #cbd5e1; font-size: 1.2rem; }
+
+    @media (max-width: 1024px) {
+      .plans-grid { grid-template-columns: 1fr; }
+      .plan-card.featured { transform: scale(1); }
+      .plan-card.featured:hover { transform: translateY(-12px); }
+      .intro h1 { font-size: 2.2rem; }
+      .comparison-section { overflow-x: auto; border-radius: 30px; }
+      table { min-width: 800px; }
+    }

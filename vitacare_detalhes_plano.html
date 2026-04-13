@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VitaCare | Detalhes do Plano</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/vitacare_detalhes_plano.css">
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <a href="vitacare_new_home.html" class="sidebar-logo">
+      <div class="logo-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+      <div class="logo-text">
+        <span style="font-size: 1.2rem; font-weight: 800; display: block;">VitaCare</span>
+        <span style="font-size: 0.6rem; opacity: 0.6; text-transform: uppercase; color: var(--texto-corpo);">Beneficiário</span>
+      </div>
+    </a>
+
+    <nav class="nav-menu">
+      <li class="nav-item"><a href="vitacare_dashboard_usuario.html" class="nav-link"><i class="fa-solid fa-house"></i> <span>Início</span></a></li>
+      <li class="nav-item"><a href="vitacare_dashboard_usuario.html" class="nav-link"><i class="fa-solid fa-calendar-check"></i> <span>Consultas</span></a></li>
+      <li class="nav-item"><a href="vitacare_dashboard_usuario.html" class="nav-link"><i class="fa-solid fa-credit-card"></i> <span>Pagamentos</span></a></li>
+      <li class="nav-item"><a href="vitacare_dashboard_usuario.html" class="nav-link"><i class="fa-solid fa-hospital"></i> <span>Rede Médica</span></a></li>
+      <li class="nav-item"><a href="vitacare_dashboard_usuario.html" class="nav-link"><i class="fa-solid fa-star"></i> <span>Avaliações</span></a></li>
+    </nav>
+
+    <div style="padding-top: 20px; border-top: 1px solid var(--borda);">
+      <a href="vitacare_dashboard_usuario.html" class="nav-link" style="color: #64748b;"><i class="fa-solid fa-gear"></i> <span>Configurações</span></a>
+      <a href="index.html" class="nav-link" style="color: #ef4444;"><i class="fa-solid fa-right-from-bracket"></i> <span>Sair</span></a>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <header class="header-top">
+      <div class="welcome">
+        <h1>Detalhes do Seu Plano</h1>
+        <p>Informações completas sobre sua cobertura</p>
+      </div>
+      <button class="btn-back" type="button" data-back="true"><i class="fa-solid fa-arrow-left"></i> Voltar</button>
+    </header>
+
+    <!-- Plan Header -->
+    <div class="plan-header">
+      <span class="plan-status"><i class="fa-solid fa-check-circle"></i> Plano Ativo</span>
+      <h2 id="planName">VitaCare Plus</h2>
+      <p id="planDescription">Seu plano está ativo e oferece cobertura completa</p>
+      <div class="plan-price">R$ <span id="planPrice">349,00</span> <span style="font-size: 1rem; opacity: 0.9;">/mês</span></div>
+    </div>
+
+    <!-- Info Box -->
+    <div class="info-box">
+      <p><i class="fa-solid fa-info-circle"></i> Próxima renovação em <strong>15/05/2026</strong>. Sua cobertura continua ativa durante todo o período.</p>
+    </div>
+
+    <!-- Diferenciais -->
+    <div class="card">
+      <div class="section-title">
+        <i class="fa-solid fa-star"></i> Diferenciais do Plano
+      </div>
+      <p id="planDiferencial" style="font-size: 0.95rem; line-height: 1.6; color: var(--texto-corpo); margin-bottom: 20px;"></p>
+    </div>
+
+    <!-- Cobertura -->
+    <div class="card">
+      <div class="section-title">
+        <i class="fa-solid fa-shield"></i> Cobertura Incluída
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+            <div class="feature-icon"><i class="fa-solid fa-stethoscope"></i></div>
+            <h4>Consultas Médicas</h4>
+          </div>
+          <p>Acesso a médicos especialistas em toda a rede credenciada</p>
+        </div>
+        <div class="feature-card">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+            <div class="feature-icon"><i class="fa-solid fa-flask"></i></div>
+            <h4>Exames Laboratoriais</h4>
+          </div>
+          <p id="planExames">Laboratoriais completos e de imagem</p>
+        </div>
+        <div class="feature-card">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+            <div class="feature-icon"><i class="fa-solid fa-hospital"></i></div>
+            <h4>Internação Hospitalar</h4>
+          </div>
+          <p>Cobertura completa em hospitais conveniados</p>
+        </div>
+        <div class="feature-card">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+            <div class="feature-icon"><i class="fa-solid fa-video"></i></div>
+            <h4>Telemedicina 24h</h4>
+          </div>
+          <p>Consultas online com médicos disponíveis</p>
+        </div>
+        <div class="feature-card">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+            <div class="feature-icon"><i class="fa-solid fa-pills"></i></div>
+            <h4>Medicamentos</h4>
+          </div>
+          <p>Desconto em farmácias conveniadas</p>
+        </div>
+        <div class="feature-card">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+            <div class="feature-icon"><i class="fa-solid fa-dumbbell"></i></div>
+            <h4>Bem-Estar</h4>
+          </div>
+          <p>Acesso a programas de saúde e fitness</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Especialidades -->
+    <div class="card">
+      <div class="section-title">
+        <i class="fa-solid fa-list-check"></i> Especialidades Cobertas
+      </div>
+      <div class="tags" id="planTags">
+        <!-- Preenchido por JavaScript -->
+      </div>
+    </div>
+
+    <!-- Carências -->
+    <div class="card">
+      <div class="section-title">
+        <i class="fa-solid fa-hourglass-end"></i> Períodos de Carência
+      </div>
+      <p style="font-size: 0.9rem; color: var(--texto-corpo); margin-bottom: 20px;">Estes são os períodos mínimos de espera para utilizar determinados serviços:</p>
+      <div class="carencias-grid" id="planCarencias">
+        <!-- Preenchido por JavaScript -->
+      </div>
+    </div>
+
+    <!-- Rede Credenciada -->
+    <div class="card">
+      <div class="section-title">
+        <i class="fa-solid fa-network-wired"></i> Rede Credenciada
+      </div>
+      <ul class="coverage-list">
+        <li class="coverage-item">
+          <i class="fa-solid fa-check"></i>
+          <div>
+            <p style="font-weight: 700; color: var(--texto-titulo);">Hospitais Premium</p>
+            <p style="font-size: 0.85rem;">Acesso a mais de 500 hospitais em todo o Brasil</p>
+          </div>
+        </li>
+        <li class="coverage-item">
+          <i class="fa-solid fa-check"></i>
+          <div>
+            <p style="font-weight: 700; color: var(--texto-titulo);">Clínicas Especializadas</p>
+            <p style="font-size: 0.85rem;">Rede de mais de 2.000 clínicas e consultórios</p>
+          </div>
+        </li>
+        <li class="coverage-item">
+          <i class="fa-solid fa-check"></i>
+          <div>
+            <p style="font-weight: 700; color: var(--texto-titulo);">Laboratórios</p>
+            <p style="font-size: 0.85rem;">Parceria com principais laboratórios do país</p>
+          </div>
+        </li>
+        <li class="coverage-item">
+          <i class="fa-solid fa-check"></i>
+          <div>
+            <p style="font-weight: 700; color: var(--texto-titulo);">Farmácias</p>
+            <p style="font-size: 0.85rem;">Desconto em mais de 5.000 farmácias conveniadas</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Ações -->
+    <div class="card">
+      <div class="section-title">
+        <i class="fa-solid fa-cog"></i> Gerenciar Plano
+      </div>
+      <div class="actions">
+        <button class="btn-action" type="button" data-toast-type="success" data-toast-title="Suporte acionado" data-toast-message="A equipe VitaCare entrará em contato em breve."><i class="fa-solid fa-headset"></i> Contatar Suporte</button>
+        <button class="btn-secondary" type="button" data-toast-type="warning" data-toast-title="Atualização solicitada" data-toast-message="Você será direcionado para revisar seus dados cadastrais."><i class="fa-solid fa-edit"></i> Atualizar Dados</button>
+      </div>
+    </div>
+  </main>
+  <script src="js/vitacare_detalhes_plano.js"></script>
+
+  <script src="js/global.js"></script>
+  <script src="navbar.js"></script>
+</body>
+</html>

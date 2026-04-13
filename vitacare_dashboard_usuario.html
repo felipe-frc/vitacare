@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VitaCare | Meu Painel de Saúde</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/vitacare_dashboard_usuario.css">
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <a href="vitacare_new_home.html" class="sidebar-logo">
+      <div class="logo-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+      <div class="logo-text">
+        <span style="font-size: 1.2rem; font-weight: 800; display: block;">VitaCare</span>
+        <span style="font-size: 0.6rem; opacity: 0.6; text-transform: uppercase; color: var(--texto-corpo);">Beneficiário</span>
+      </div>
+    </a>
+
+    <nav class="nav-menu">
+      <li class="nav-item"><a href="#" class="nav-link active" data-section-target="home"><i class="fa-solid fa-house"></i> <span>Início</span></a></li>
+      <li class="nav-item"><a href="#" class="nav-link" data-section-target="consultas"><i class="fa-solid fa-calendar-check"></i> <span>Consultas</span></a></li>
+      <li class="nav-item"><a href="#" class="nav-link" data-section-target="pagamentos"><i class="fa-solid fa-credit-card"></i> <span>Pagamentos</span></a></li>
+      <li class="nav-item"><a href="#" class="nav-link" data-section-target="rede"><i class="fa-solid fa-hospital"></i> <span>Rede Médica</span></a></li>
+      <li class="nav-item"><a href="#" class="nav-link" data-section-target="avaliacoes"><i class="fa-solid fa-star"></i> <span>Avaliações</span></a></li>
+    </nav>
+
+    <div style="padding-top: 20px; border-top: 1px solid var(--borda);">
+      <a href="vitacare_dashboard_usuario.html" class="nav-link" style="color: #64748b;"><i class="fa-solid fa-gear"></i> <span>Configurações</span></a>
+      <a href="index.html" class="nav-link" style="color: #ef4444;"><i class="fa-solid fa-right-from-bracket"></i> <span>Sair</span></a>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <header class="header-top">
+      <div class="welcome">
+        <h1>Olá, Mariana Oliveira!</h1>
+        <p>Como você está se sentindo hoje?</p>
+      </div>
+      <div class="user-profile">
+        <div class="notification-btn">
+          <i class="fa-solid fa-bell"></i>
+          <div class="notification-dot"></div>
+        </div>
+        <div style="width: 45px; height: 45px; border-radius: 14px; background: url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80') center/cover;"></div>
+      </div>
+    </header>
+
+    <!-- Section: Home -->
+    <div id="home" class="dashboard-section active">
+      <div class="dashboard-grid">
+        <div class="left-col">
+          <div class="plan-info">
+            <h2>VitaCare Plus</h2>
+            <p>Seu plano está ativo. Próxima renovação em 15/05/2026.</p>
+            <button class="btn-white" type="button" data-nav="vitacare_detalhes_plano.html?plan=plus">Ver Detalhes do Plano</button>
+          </div>
+
+          <div class="card">
+            <div class="card-title">
+              Próximas Consultas
+              <a href="#" data-open-section="consultas">Ver todas</a>
+            </div>
+            <div class="appointment-item">
+              <div class="date-badge"><span>ABR</span><span>14</span></div>
+              <div style="flex-grow: 1;">
+                <p style="font-weight: 800; color: var(--texto-titulo);">Dr. Roberto Carlos</p>
+                <p style="font-size: 0.8rem;">Cardiologista • 14:30</p>
+              </div>
+              <button class="btn-white" type="button" style="background: var(--vermelho-suave); color: var(--vermelho-vibrante); padding: 8px 12px;" data-toast-type="success" data-toast-title="Consulta confirmada" data-toast-message="Sua consulta foi confirmada com sucesso.">Confirmar</button>
+            </div>
+            <div class="appointment-item">
+              <div class="date-badge"><span>MAI</span><span>02</span></div>
+              <div style="flex-grow: 1;">
+                <p style="font-weight: 800; color: var(--texto-titulo);">Dra. Ana Paula</p>
+                <p style="font-size: 0.8rem;">Dermatologista • 09:00</p>
+              </div>
+              <i class="fa-solid fa-chevron-right" style="color: #cbd5e1;"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="right-col">
+          <div class="card">
+            <div class="card-title">Financeiro</div>
+            <div class="payment-item">
+              <div>
+                <p style="font-size: 0.85rem; font-weight: 700;">Mensalidade Abril</p>
+                <p style="font-size: 0.75rem; color: #64748b;">Vencimento: 10/04</p>
+              </div>
+              <span class="payment-status status-paid">Pago</span>
+            </div>
+            <div class="payment-item">
+              <div>
+                <p style="font-size: 0.85rem; font-weight: 700;">Mensalidade Maio</p>
+                <p style="font-size: 0.75rem; color: #64748b;">Vencimento: 10/05</p>
+              </div>
+              <span class="payment-status status-pending">Pendente</span>
+            </div>
+            <button class="btn-white" type="button" style="width: 100%; margin-top: 15px; border: 1px solid var(--borda);" data-open-section="pagamentos">Ver Faturas</button>
+          </div>
+
+          <div class="card">
+            <div class="card-title">Carteirinha Digital</div>
+            <div style="background: #1e293b; border-radius: 16px; padding: 20px; color: white; position: relative;">
+              <p style="font-size: 0.6rem; text-transform: uppercase; opacity: 0.6;">Beneficiário</p>
+              <p style="font-weight: 800; font-size: 0.9rem; margin-bottom: 15px;">MARIANA OLIVEIRA</p>
+              <p style="font-size: 0.6rem; text-transform: uppercase; opacity: 0.6;">Número da Carteirinha</p>
+              <p style="font-weight: 800; font-size: 0.9rem;">8842 5567 1234 0001</p>
+              <i class="fa-solid fa-qrcode" style="position: absolute; bottom: 20px; right: 20px; font-size: 2rem; opacity: 0.5;"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section: Consultas -->
+    <div id="consultas" class="dashboard-section">
+      <div class="card">
+        <div class="card-title">Gerenciar Consultas</div>
+        <p style="margin-bottom: 20px; color: var(--texto-corpo);">Agende, confirme ou cancele suas consultas médicas.</p>
+        <button class="btn-white" type="button" style="background: var(--vermelho-vibrante); color: white; width: 100%; padding: 14px; border: none; cursor: pointer; font-weight: 800;" data-nav="vitacare_consultas_disponibilidade.html">
+          <i class="fa-solid fa-plus"></i> Agendar Nova Consulta
+        </button>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Próximas Consultas Agendadas</div>
+        <div class="appointment-item">
+          <div class="date-badge"><span>ABR</span><span>14</span></div>
+          <div style="flex-grow: 1;">
+            <p style="font-weight: 800; color: var(--texto-titulo);">Dr. Roberto Carlos</p>
+            <p style="font-size: 0.8rem;">Cardiologista • 14:30</p>
+            <p style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Local: Hospital São Luiz - Av. Paulista</p>
+          </div>
+          <button class="btn-white" type="button" style="background: var(--vermelho-suave); color: var(--vermelho-vibrante); padding: 8px 12px; cursor: pointer;" data-toast-type="success" data-toast-title="Consulta confirmada" data-toast-message="Sua presença foi confirmada.">Confirmar</button>
+        </div>
+        <div class="appointment-item">
+          <div class="date-badge"><span>MAI</span><span>02</span></div>
+          <div style="flex-grow: 1;">
+            <p style="font-weight: 800; color: var(--texto-titulo);">Dra. Ana Paula</p>
+            <p style="font-size: 0.8rem;">Dermatologista • 09:00</p>
+            <p style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Local: Clínica Derma Plus - Rua Augusta</p>
+          </div>
+          <button class="btn-white" type="button" style="background: #f1f5f9; color: var(--texto-corpo); padding: 8px 12px; cursor: pointer;" data-toast-type="warning" data-toast-title="Consulta cancelada" data-toast-message="O agendamento foi cancelado.">Cancelar</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Consultas Realizadas</div>
+        <div class="appointment-item">
+          <div class="date-badge"><span>MAR</span><span>20</span></div>
+          <div style="flex-grow: 1;">
+            <p style="font-weight: 800; color: var(--texto-titulo);">Dr. Fernando Silva</p>
+            <p style="font-size: 0.8rem;">Clínico Geral • 10:00</p>
+            <p style="font-size: 0.75rem; color: #64748b; margin-top: 4px;"><i class="fa-solid fa-check-circle" style="color: #10b981;"></i> Consulta realizada</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section: Pagamentos -->
+    <div id="pagamentos" class="dashboard-section">
+      <div class="card">
+        <div class="card-title">Histórico de Pagamentos</div>
+        
+        <div class="payment-section">
+          <h3><i class="fa-solid fa-exclamation-circle" style="color: var(--vermelho-vibrante);"></i> Pagamentos Pendentes</h3>
+          <div class="payment-list">
+            <div class="payment-item" style="padding: 16px; background: #fff1f2; border-radius: 12px; border-bottom: none;">
+              <div>
+                <p style="font-size: 0.85rem; font-weight: 700;">Mensalidade Maio 2026</p>
+                <p style="font-size: 0.75rem; color: #64748b;">Vencimento: 10/05/2026</p>
+              </div>
+              <div style="text-align: right;">
+                <p style="font-size: 0.9rem; font-weight: 800; color: var(--vermelho-vibrante);">R$ 349,00</p>
+                <button class="btn-white" type="button" style="background: var(--vermelho-vibrante); color: white; padding: 6px 12px; margin-top: 8px; cursor: pointer;" data-toast-type="warning" data-toast-title="Pagamento" data-toast-message="Redirecionamento de pagamento simulado no protótipo.">Pagar Agora</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="payment-section">
+          <h3><i class="fa-solid fa-calendar-check" style="color: #10b981;"></i> Próximos Pagamentos</h3>
+          <div class="payment-list">
+            <div class="payment-item" style="padding: 16px; background: #f0fdf4; border-radius: 12px; border-bottom: none;">
+              <div>
+                <p style="font-size: 0.85rem; font-weight: 700;">Mensalidade Junho 2026</p>
+                <p style="font-size: 0.75rem; color: #64748b;">Vencimento: 10/06/2026</p>
+              </div>
+              <div style="text-align: right;">
+                <p style="font-size: 0.9rem; font-weight: 800; color: #10b981;">R$ 349,00</p>
+                <span class="payment-status status-paid">Agendado</span>
+              </div>
+            </div>
+            <div class="payment-item" style="padding: 16px; background: #f0fdf4; border-radius: 12px; border-bottom: none; margin-top: 12px;">
+              <div>
+                <p style="font-size: 0.85rem; font-weight: 700;">Mensalidade Julho 2026</p>
+                <p style="font-size: 0.75rem; color: #64748b;">Vencimento: 10/07/2026</p>
+              </div>
+              <div style="text-align: right;">
+                <p style="font-size: 0.9rem; font-weight: 800; color: #10b981;">R$ 349,00</p>
+                <span class="payment-status status-paid">Agendado</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="payment-section">
+          <h3><i class="fa-solid fa-check-circle" style="color: #10b981;"></i> Pagamentos Realizados</h3>
+          <div class="payment-list">
+            <div class="payment-item">
+              <div>
+                <p style="font-size: 0.85rem; font-weight: 700;">Mensalidade Abril 2026</p>
+                <p style="font-size: 0.75rem; color: #64748b;">Pago em: 05/04/2026</p>
+              </div>
+              <span class="payment-status status-paid">Pago</span>
+            </div>
+            <div class="payment-item">
+              <div>
+                <p style="font-size: 0.85rem; font-weight: 700;">Mensalidade Março 2026</p>
+                <p style="font-size: 0.75rem; color: #64748b;">Pago em: 02/03/2026</p>
+              </div>
+              <span class="payment-status status-paid">Pago</span>
+            </div>
+            <div class="payment-item">
+              <div>
+                <p style="font-size: 0.85rem; font-weight: 700;">Mensalidade Fevereiro 2026</p>
+                <p style="font-size: 0.75rem; color: #64748b;">Pago em: 01/02/2026</p>
+              </div>
+              <span class="payment-status status-paid">Pago</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section: Rede Médica -->
+    <div id="rede" class="dashboard-section">
+      <div class="card">
+        <div class="card-title">Hospitais e Parceiros Próximos</div>
+        <div class="partner-list">
+          <div class="partner-card">
+            <i class="fa-solid fa-hospital-user"></i>
+            <p style="font-weight: 800; font-size: 0.9rem;">Hospital São Luiz</p>
+            <p style="font-size: 0.75rem;">A 2.5km de você</p>
+            <span class="status-badge status-approved" style="font-size: 0.6rem; margin-top: 5px; display: inline-block;">Pronto Atendimento 24h</span>
+          </div>
+          <div class="partner-card">
+            <i class="fa-solid fa-microscope"></i>
+            <p style="font-weight: 800; font-size: 0.9rem;">Laboratório Fleury</p>
+            <p style="font-size: 0.75rem;">Unidade Jardins</p>
+            <span class="status-badge status-approved" style="font-size: 0.6rem; margin-top: 5px; display: inline-block;">Exames de Imagem</span>
+          </div>
+          <div class="partner-card">
+            <i class="fa-solid fa-pills"></i>
+            <p style="font-weight: 800; font-size: 0.9rem;">Droga Raia</p>
+            <p style="font-size: 0.75rem;">Desconto de até 40%</p>
+          </div>
+          <div class="partner-card">
+            <i class="fa-solid fa-dumbbell"></i>
+            <p style="font-weight: 800; font-size: 0.9rem;">Smart Fit</p>
+            <p style="font-size: 0.75rem;">Parceiro Bem-Estar</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section: Avaliações -->
+    <div id="avaliacoes" class="dashboard-section">
+      <div class="card">
+        <div class="card-title">Minhas Avaliações</div>
+        <div class="review-item">
+          <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <p style="font-weight: 800; font-size: 0.9rem;">Dr. Roberto Carlos (Cardiologia)</p>
+          <p style="font-size: 0.85rem; color: #64748b;">"Atendimento excelente, muito atencioso e explicou tudo com calma."</p>
+          <p style="font-size: 0.7rem; margin-top: 5px;">Avaliado em 10/03/2026</p>
+        </div>
+        <div class="review-item">
+          <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></div>
+          <p style="font-weight: 800; font-size: 0.9rem;">Hospital São Luiz (Pronto Socorro)</p>
+          <p style="font-size: 0.85rem; color: #64748b;">"Um pouco de demora na triagem, mas os médicos são ótimos."</p>
+          <p style="font-size: 0.7rem; margin-top: 5px;">Avaliado em 15/02/2026</p>
+        </div>
+        <button class="btn-submit" type="button" style="background: var(--vermelho-vibrante); color: white; width: 100%; border: none; padding: 15px; border-radius: 14px; font-weight: 800; cursor: pointer;" data-toast-type="success" data-toast-title="Avaliação" data-toast-message="Fluxo de avaliação iniciado no protótipo.">Avaliar Novo Atendimento</button>
+      </div>
+    </div>
+
+  </main>
+  <script src="js/vitacare_dashboard_usuario.js"></script>
+
+  <script src="js/global.js"></script>
+  <script src="navbar.js"></script>
+</body>
+</html>

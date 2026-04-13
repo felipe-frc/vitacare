@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VitaCare | Portal do Corretor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/vitacare_dashboard_corretor.css">
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <a href="vitacare_new_home.html" class="sidebar-logo">
+      <div class="logo-icon"><i class="fa-solid fa-handshake"></i></div>
+      <div class="logo-text">
+        <span style="font-size: 1.2rem; font-weight: 800; display: block;">VitaCare</span>
+        <span style="font-size: 0.6rem; opacity: 0.6; text-transform: uppercase;">Portal do Corretor</span>
+      </div>
+    </a>
+
+    <nav class="nav-menu">
+      <li class="nav-item"><a href="#" class="nav-link active" data-section-target="dashboard"><i class="fa-solid fa-chart-line"></i> <span>Dashboard</span></a></li>
+      <li class="nav-item"><a href="#" class="nav-link" data-section-target="propostas"><i class="fa-solid fa-file-invoice"></i> <span>Gerenciar Propostas</span></a></li>
+      <li class="nav-item"><a href="#" class="nav-link" data-section-target="cadastrar"><i class="fa-solid fa-plus-circle"></i> <span>Cadastrar Plano</span></a></li>
+      <li class="nav-item"><a href="#" class="nav-link" data-section-target="acompanhar"><i class="fa-solid fa-magnifying-glass"></i> <span>Acompanhar</span></a></li>
+    </nav>
+
+    <div style="padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
+      <a href="index.html" class="nav-link" style="color: #ef4444;"><i class="fa-solid fa-right-from-bracket"></i> <span>Sair</span></a>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <header class="header-top">
+      <div class="welcome">
+        <h1>Olá, Corretor Felipe!</h1>
+        <p>Bem-vindo ao seu painel de controle VitaCare.</p>
+      </div>
+      <div class="user-profile">
+        <div class="avatar">F</div>
+        <div style="line-height: 1;">
+          <p style="font-weight: 800; font-size: 0.9rem;">Felipe Corretor</p>
+          <span style="font-size: 0.7rem; color: #64748b;">SUSEP: 123456-7</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Stats -->
+    <div class="stats-grid">
+      <div class="stat-card blue">
+        <p class="stat-label">Vendas no Mês</p>
+        <p class="stat-value">24</p>
+      </div>
+      <div class="stat-card green">
+        <p class="stat-label">Comissões a Receber</p>
+        <p class="stat-value">R$ 4.250,00</p>
+      </div>
+      <div class="stat-card orange">
+        <p class="stat-label">Propostas Pendentes</p>
+        <p class="stat-value" id="propostas-pendentes">08</p>
+      </div>
+      <div class="stat-card red">
+        <p class="stat-label">Cancelamentos</p>
+        <p class="stat-value">02</p>
+      </div>
+    </div>
+
+    <!-- Section: Dashboard -->
+    <section id="dashboard" class="dashboard-section active">
+      <div class="section-title">Vendas Recentes</div>
+      <table>
+        <thead>
+          <tr>
+            <th>Cliente</th>
+            <th>Plano</th>
+            <th>Data</th>
+            <th>Valor</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Ricardo Santos</td>
+            <td>VitaCare Premium</td>
+            <td>10/04/2026</td>
+            <td>R$ 599,00</td>
+            <td><span class="status-badge status-approved">Aprovada</span></td>
+          </tr>
+          <tr>
+            <td>Mariana Oliveira</td>
+            <td>VitaCare Plus</td>
+            <td>09/04/2026</td>
+            <td>R$ 349,00</td>
+            <td><span class="status-badge status-pending">Em Análise</span></td>
+          </tr>
+          <tr>
+            <td>Carlos Eduardo</td>
+            <td>VitaCare Basic</td>
+            <td>08/04/2026</td>
+            <td>R$ 199,00</td>
+            <td><span class="status-badge status-approved">Aprovada</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Section: Gerenciar Propostas -->
+    <section id="propostas" class="dashboard-section">
+      <div class="section-title">Gerenciar Todas as Propostas</div>
+      <div style="margin-bottom: 20px; display: flex; gap: 10px;">
+        <input type="text" placeholder="Buscar por cliente ou CPF..." style="max-width: 300px; padding: 10px;">
+        <select style="max-width: 150px; padding: 10px;">
+          <option>Todos Status</option>
+          <option>Aprovada</option>
+          <option>Pendente</option>
+        </select>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Cliente</th>
+            <th>Plano</th>
+            <th>Dependentes</th>
+            <th>Status</th>
+            <th>Ação</th>
+          </tr>
+        </thead>
+        <tbody id="propostas-table-body">
+          <tr>
+            <td>#8842</td>
+            <td>Ana Beatriz</td>
+            <td>Plus</td>
+            <td>02</td>
+            <td><span class="status-badge status-pending">Aguardando Pagto</span></td>
+            <td><a href="#" style="color: var(--azul-primario); font-size: 0.8rem; cursor: pointer;" data-proposta-id="PROP-002" class="proposal-detail-link">Ver Detalhes</a></td>
+          </tr>
+          <tr>
+            <td>#8841</td>
+            <td>Lucas Lima</td>
+            <td>Basic</td>
+            <td>00</td>
+            <td><span class="status-badge status-approved">Ativo</span></td>
+            <td><a href="#" style="color: var(--azul-primario); font-size: 0.8rem; cursor: pointer;" data-proposta-id="PROP-001" class="proposal-detail-link">Ver Detalhes</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Section: Cadastrar Plano -->
+    <section id="cadastrar" class="dashboard-section">
+      <div class="section-title">Cadastrar Nova Proposta</div>
+      <form id="formProposta">
+        <div class="form-grid">
+          <div class="form-group full">
+            <label>Nome Completo do Cliente</label>
+            <input type="text" id="nomeCliente" placeholder="Digite o nome completo" required>
+          </div>
+          <div class="form-group">
+            <label>CPF</label>
+            <input type="text" id="cpfCliente" placeholder="000.000.000-00" required>
+          </div>
+          <div class="form-group">
+            <label>E-mail</label>
+            <input type="email" id="emailCliente" placeholder="cliente@email.com" required>
+          </div>
+          <div class="form-group">
+            <label>Plano Selecionado</label>
+            <select id="planoSelecionado" required>
+              <option value="">Selecione um plano</option>
+              <option value="VitaCare Basic">VitaCare Basic - R$ 199,00</option>
+              <option value="VitaCare Plus">VitaCare Plus - R$ 349,00</option>
+              <option value="VitaCare Premium">VitaCare Premium - R$ 599,00</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Número de Dependentes</label>
+            <input type="number" id="dependentes" placeholder="0" min="0" value="0" required>
+          </div>
+          <div class="form-group">
+            <label>Vigência do Plano</label>
+            <input type="date" id="vigenciaPlano" required>
+          </div>
+          <div class="form-group full">
+            <label>Observações / Observações Médicas Iniciais</label>
+            <textarea id="observacoes" rows="4" placeholder="Alguma observação importante sobre o cliente..."></textarea>
+          </div>
+        </div>
+        <button type="submit" class="btn-submit">Enviar Proposta para Análise</button>
+      </form>
+    </section>
+
+    <!-- Section: Acompanhar -->
+    <section id="acompanhar" class="dashboard-section">
+      <div class="section-title">Acompanhar Status de Proposta</div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+        <!-- Coluna de Busca -->
+        <div style="max-width: 100%;">
+          <h3 style="font-size: 1rem; font-weight: 800; margin-bottom: 16px; color: var(--texto-escuro);">Rastrear Proposta</h3>
+          <input type="text" id="buscaProposta" placeholder="Número da Proposta ou CPF" style="margin-bottom: 20px;">
+          <button class="btn-submit" type="button" style="width: 100%;" id="buscarPropostaBtn">Buscar Agora</button>
+        </div>
+
+        <!-- Coluna de Resultados -->
+        <div>
+          <h3 style="font-size: 1rem; font-weight: 800; margin-bottom: 16px; color: var(--texto-escuro);">Propostas Enviadas</h3>
+          <div id="propostas-acompanhar" style="max-height: 400px; overflow-y: auto;">
+            <!-- Preenchido por JavaScript -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <script src="js/vitacare_dashboard_corretor.js"></script>
+
+  <script src="js/global.js"></script>
+  <script src="navbar.js"></script>
+</body>
+</html>

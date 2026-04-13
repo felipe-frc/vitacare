@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VitaCare | Escolha seu Plano</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/vitacare_planos.css">
+</head>
+<body>
+
+ 
+
+  <main class="container">
+    <section class="intro">
+      <h1>Escolha o plano ideal para <span>você.</span></h1>
+      <p>Cuidado inteligente, rede ampla e tecnologia a serviço da sua saúde. Compare e decida.</p>
+    </section>
+
+    <div class="plans-grid">
+      <!-- Basic -->
+      <div class="plan-card">
+        <div class="plan-icon"><i class="fa-solid fa-shield-heart"></i></div>
+        <h2 class="plan-name">VitaCare Basic</h2>
+        <div class="plan-price">R$ 199<span>/mês</span></div>
+        <ul class="feature-list">
+          <li class="feature-item"><i class="fa-solid fa-circle-check"></i> Consultas Online 24h</li>
+          <li class="feature-item"><i class="fa-solid fa-circle-check"></i> Exames Laboratoriais Básicos</li>
+          <li class="feature-item"><i class="fa-solid fa-circle-check"></i> Rede de Clínicas Parceiras</li>
+          <li class="feature-item highlight"><i class="fa-solid fa-circle-check"></i> Diferencial: Telemedicina Ilimitada</li>
+        </ul>
+        <a href="vitacare_inscricao_detalhada.html?plan=basic" class="btn-select">Assinar Basic</a>
+      </div>
+
+      <!-- Plus -->
+      <div class="plan-card featured">
+        <div class="featured-badge">Mais Popular</div>
+        <div class="plan-icon"><i class="fa-solid fa-star"></i></div>
+        <h2 class="plan-name">VitaCare Plus</h2>
+        <div class="plan-price">R$ 349<span>/mês</span></div>
+        <ul class="feature-list">
+          <li class="feature-item"><i class="fa-solid fa-circle-check"></i> Tudo do plano Basic</li>
+          <li class="feature-item"><i class="fa-solid fa-circle-check"></i> Consultas Presenciais</li>
+          <li class="feature-item"><i class="fa-solid fa-circle-check"></i> Exames de Imagem (Raio-X, Eco)</li>
+          <li class="feature-item highlight"><i class="fa-solid fa-circle-check"></i> Diferencial: Atendimento Domiciliar</li>
+        </ul>
+        <a href="vitacare_inscricao_detalhada.html?plan=plus" class="btn-select">Assinar Plus</a>
+      </div>
+
+      <!-- Premium -->
+      <div class="plan-card">
+        <div class="plan-icon"><i class="fa-solid fa-crown"></i></div>
+        <h2 class="plan-name">VitaCare Premium</h2>
+        <div class="plan-price">R$ 599<span>/mês</span></div>
+        <ul class="feature-list">
+          <li class="feature-item"><i class="fa-solid fa-circle-check"></i> Tudo do plano Plus</li>
+          <li class="feature-item"><i class="fa-solid fa-circle-check"></i> Cobertura Internacional</li>
+          <li class="feature-item"><i class="fa-solid fa-circle-check"></i> Check-up Executivo Anual</li>
+          <li class="feature-item highlight"><i class="fa-solid fa-circle-check"></i> Diferencial: Concierge de Saúde 24h</li>
+        </ul>
+        <a href="vitacare_inscricao_detalhada.html?plan=premium" class="btn-select">Assinar Premium</a>
+      </div>
+    </div>
+
+    <section class="comparison-section">
+      <div class="comparison-title">
+        <h2>Comparativo de Benefícios</h2>
+      </div>
+      <div class="container">
+        <table>
+          <thead>
+            <tr>
+              <th class="feature-name">Benefício</th>
+              <th>Basic</th>
+              <th>Plus</th>
+              <th>Premium</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="feature-name">Consultas por Telemedicina</td>
+              <td><i class="fa-solid fa-circle-check check-icon"></i></td>
+              <td><i class="fa-solid fa-circle-check check-icon"></i></td>
+              <td><i class="fa-solid fa-circle-check check-icon"></i></td>
+            </tr>
+            <tr>
+              <td class="feature-name">Consultas Presenciais</td>
+              <td><i class="fa-solid fa-minus dash-icon"></i></td>
+              <td><i class="fa-solid fa-circle-check check-icon"></i></td>
+              <td><i class="fa-solid fa-circle-check check-icon"></i></td>
+            </tr>
+            <tr>
+              <td class="feature-name">Exames Laboratoriais</td>
+              <td>Básicos</td>
+              <td>Completos</td>
+              <td>Ilimitados</td>
+            </tr>
+            <tr>
+              <td class="feature-name">Atendimento Personalizado</td>
+              <td>Digital</td>
+              <td>Domiciliar</td>
+              <td>Concierge 24h</td>
+            </tr>
+            <tr>
+              <td class="feature-name">Cobertura Internacional</td>
+              <td><i class="fa-solid fa-minus dash-icon"></i></td>
+              <td><i class="fa-solid fa-minus dash-icon"></i></td>
+              <td><i class="fa-solid fa-circle-check check-icon"></i></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer style="background: var(--azul-primario); color: white; padding: 60px 0; text-align: center; border-radius: 60px 60px 0 0;">
+    <div class="container">
+      <p style="font-weight: 800; font-size: 1.5rem; margin-bottom: 20px;">VitaCare</p>
+      <p style="opacity: 0.7; margin-bottom: 30px;">A saúde que você merece, com a tecnologia que você precisa.</p>
+      <div style="display: flex; justify-content: center; gap: 20px;">
+        <i class="fa-brands fa-instagram" style="font-size: 1.5rem;"></i>
+        <i class="fa-brands fa-linkedin" style="font-size: 1.5rem;"></i>
+        <i class="fa-brands fa-whatsapp" style="font-size: 1.5rem;"></i>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/global.js"></script>
+  <script src="navbar.js"></script>
+</body>
+</html>
