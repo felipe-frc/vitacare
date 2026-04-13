@@ -272,7 +272,7 @@
     const isUserArea = ['vitacare_dashboard_usuario.html', 'vitacare_detalhes_plano.html', 'vitacare_consultas_disponibilidade.html'].includes(file);
     const isBrokerArea = ['vitacare_dashboard_corretor.html', 'vitacare_cadastro_corretor.html', 'vitacare_login_corretor.html'].includes(file);
 
-    let actionHref = 'vitacare_new_home.html';
+    let actionHref = 'index.html';
     let actionLabel = 'Voltar ao início';
     let actionIcon = 'fa-arrow-left';
 
@@ -287,16 +287,16 @@
     }
 
     if (file === 'vitacare_dashboard_usuario.html' || file === 'vitacare_dashboard_corretor.html') {
-      actionHref = 'vitacare_new_home.html';
+      actionHref = 'index.html';
       actionLabel = 'Voltar ao início';
       actionIcon = 'fa-house';
     }
 
     const links = [
-      { href: 'vitacare_new_home.html', label: 'Início', match: ['vitacare_new_home.html', 'index.html'] },
+      { href: 'index.html', label: 'Início', match: ['index.html'] },
       { href: 'vitacare_planos.html', label: 'Planos', match: ['vitacare_planos.html', 'vitacare_inscricao_detalhada.html', 'vitacare_detalhes_plano.html'] },
-      { href: 'vitacare_new_home.html#sobre', label: 'Sobre', match: [] },
-      { href: 'vitacare_new_home.html#contato', label: 'Contato', match: [] }
+      { href: 'index.html#sobre', label: 'Sobre', match: [] },
+      { href: 'index.html#contato', label: 'Contato', match: [] }
     ];
 
     const navLinks = links.map(link => {
@@ -307,7 +307,7 @@
     return `
       <header class="vc-internal-navbar" aria-label="Navegação principal interna">
         <div class="vc-internal-navbar__inner">
-          <a href="vitacare_new_home.html" class="vc-brand" aria-label="VitaCare início">
+          <a href="index.html" class="vc-brand" aria-label="VitaCare início">
             <span class="vc-brand__mark"><i class="fa-solid fa-heart-pulse"></i></span>
             <span class="vc-brand__text">
               <strong>VitaCare</strong>
@@ -364,7 +364,7 @@
 
   document.addEventListener('DOMContentLoaded', function () {
     const file = getCurrentFile();
-    const isHome = file === 'vitacare_new_home.html';
+    const isHome = file === 'index.html';
     const isDashboard = file === 'vitacare_dashboard_usuario.html' || file === 'vitacare_dashboard_corretor.html' || file === 'vitacare_detalhes_plano.html';
 
     injectStyles();
