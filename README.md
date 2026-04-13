@@ -7,6 +7,7 @@ Bem-vindo ao **VitaCare**, uma plataforma completa de gestão de saúde que ofer
 ### Arquivos Principais
 
 #### Para Beneficiários (Usuários)
+
 - **vitacare_dashboard_usuario.html** - Dashboard principal do beneficiário com seções de:
   - Início: Visualização do plano ativo e próximas consultas
   - Consultas: Agendamento e gerenciamento de consultas
@@ -28,6 +29,7 @@ Bem-vindo ao **VitaCare**, uma plataforma completa de gestão de saúde que ofer
   - Rede credenciada
 
 #### Para Corretores
+
 - **vitacare_dashboard_corretor.html** - Dashboard do corretor com:
   - Dashboard: Vendas recentes e estatísticas
   - Gerenciar Propostas: Visualização de todas as propostas
@@ -37,8 +39,9 @@ Bem-vindo ao **VitaCare**, uma plataforma completa de gestão de saúde que ofer
   - Armazenamento de propostas em localStorage
 
 #### Páginas Compartilhadas
+
 - **index.html** - Página de login principal
-- **vitacare_new_home.html** - Home page com informações gerais
+- **index.html** - Home page com informações gerais
 - **vitacare_planos.html** - Comparação de planos disponíveis
 - **vitacare_inscricao_detalhada.html** - Checkout e inscrição
 - **vitacare_cadastro_usuario.html** - Cadastro de beneficiários
@@ -46,6 +49,7 @@ Bem-vindo ao **VitaCare**, uma plataforma completa de gestão de saúde que ofer
 - **vitacare_login_corretor.html** - Login para corretores
 
 #### Arquivos de Suporte
+
 - **navbar.js** - Script de navegação compartilhado
 - **db_propostas.json** - Banco de dados de propostas (exemplo)
 
@@ -75,6 +79,7 @@ O projeto mantém uma identidade visual profissional e consistente:
 ### Dashboard do Usuário
 
 #### 1. Seção de Consultas Expandida
+
 - Nova página dedicada para agendamento de consultas
 - Filtros avançados por especialidade, data e período
 - Visualização de médicos disponíveis com ratings
@@ -82,12 +87,14 @@ O projeto mantém uma identidade visual profissional e consistente:
 - Gerenciamento de consultas agendadas e realizadas
 
 #### 2. Seção de Pagamentos Completa
+
 - Pagamentos pendentes com opção de pagamento imediato
 - Próximos pagamentos agendados
 - Histórico completo de pagamentos realizados
 - Status visual de cada pagamento
 
 #### 3. Página de Detalhes do Plano
+
 - Informações completas do plano ativo
 - Diferenciais específicos de cada plano
 - Cobertura incluída com ícones
@@ -98,18 +105,21 @@ O projeto mantém uma identidade visual profissional e consistente:
 ### Dashboard do Corretor
 
 #### 1. Sistema de Notificações Toast
+
 - Notificações de sucesso ao enviar proposta
 - Mensagens com feedback visual
 - Animações suaves de entrada e saída
 - Sem redirecionamento para página de inscrição
 
 #### 2. Banco de Dados de Propostas
+
 - Armazenamento em localStorage
 - Persistência de dados entre sessões
 - Estrutura de dados completa para propostas
 - Suporte a múltiplas propostas
 
 #### 3. Seção de Acompanhamento Aprimorada
+
 - Visualização de todas as propostas enviadas
 - Busca por ID ou CPF
 - Status em tempo real de cada proposta
@@ -118,10 +128,12 @@ O projeto mantém uma identidade visual profissional e consistente:
 ## 🔧 Funcionalidades Técnicas
 
 ### Armazenamento de Dados
+
 - **localStorage**: Utilizado para persistência de propostas do corretor
 - **JSON**: Formato de dados estruturado
 
 ### Interatividade
+
 - Validação de formulários
 - Filtros dinâmicos
 - Busca em tempo real
@@ -129,6 +141,7 @@ O projeto mantém uma identidade visual profissional e consistente:
 - Notificações visuais
 
 ### Responsividade
+
 - Design adaptável para diferentes tamanhos de tela
 - Sidebar colapsável em mobile
 - Grids responsivos
