@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VitaCare | Login</title>
+  
+  <!-- Fontes Premium -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Icones -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+  <header class="header" id="header">
+    <div class="container">
+      <div class="header-content">
+        <a href="vitacare_new_home.html" class="logo">
+          <div class="logo-icon">
+            <i class="fa-solid fa-heart-pulse"></i>
+          </div>
+          <div class="logo-text">
+            <strong>VitaCare</strong>
+            <span>Saúde Conectada</span>
+          </div>
+        </a>
+
+        <nav class="nav">
+          <a href="vitacare_new_home.html#beneficios">Benefícios</a>
+          <a href="vitacare_new_home.html#planos">Planos</a>
+          <a href="vitacare_new_home.html#sobre">Sobre</a>
+          <a href="vitacare_new_home.html#contato">Contato</a>
+        </nav>
+
+        <div class="header-actions">
+          <a href="vitacare_new_home.html" class="btn-link">← Voltar ao início</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="login-wrapper">
+    <div class="login-container">
+      <!-- Seção Visual -->
+      <div class="login-visual">
+        <div class="visual-content">
+          <div class="visual-header">
+            <h2>Bem-vindo de volta</h2>
+            <p>Acesse seu painel para gerenciar consultas, exames e cuidar do que mais importa.</p>
+          </div>
+
+          <div class="visual-features">
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="fa-solid fa-video"></i>
+              </div>
+              <div>
+                <h4>Consultas Online</h4>
+                <p>Agende com especialistas 24h</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="fa-solid fa-file-medical"></i>
+              </div>
+              <div>
+                <h4>Seus Exames</h4>
+                <p>Acesse todos os seus resultados</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="fa-solid fa-calendar-check"></i>
+              </div>
+              <div>
+                <h4>Agendamentos</h4>
+                <p>Gerencie todas as suas consultas</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formulário de Login -->
+      <div class="login-form-side">
+        <div class="form-container">
+          <div class="form-header">
+            <h1>Acesse sua conta</h1>
+            <p>Insira suas credenciais para continuar.</p>
+          </div>
+
+          <form action="vitacare_dashboard_usuario.html">
+            <div class="form-group">
+              <label for="usuario">E-mail, CPF ou Carteirinha</label>
+              <div class="input-wrapper">
+                <i class="fa-solid fa-user"></i>
+                <input type="text" id="usuario" placeholder="Ex: joao@email.com" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <label for="senha">Senha</label>
+                <a href="vitacare_cadastro_usuario.html" class="forgot-password">Esqueceu a senha?</a>
+              </div>
+              <div class="input-wrapper">
+                <i class="fa-solid fa-lock"></i>
+                <input type="password" id="senha" placeholder="••••••••" required>
+              </div>
+            </div>
+
+            <button type="submit" class="btn-login">Entrar na VitaCare</button>
+          </form>
+
+          <div class="divider">ou entre com</div>
+
+          <div class="social-buttons">
+            <button class="btn-outline" type="button" data-nav="vitacare_dashboard_usuario.html">
+              <img src="https://www.svgrepo.com/show/475656/google-color.svg" width="18" alt="Google"> Google
+            </button>
+            <button class="btn-outline" type="button" data-nav="vitacare_dashboard_usuario.html">
+              <i class="fa-brands fa-apple" style="font-size: 1.2rem;"></i> Apple
+            </button>
+          </div>
+
+          <div class="form-footer">
+            <p class="footer-text">
+              Ainda não tem uma conta? <a href="vitacare_cadastro_usuario.html">Cadastre-se agora</a>
+            </p>
+            <p class="footer-text">
+              É corretor? 
+              <a href="vitacare_login_corretor.html" style="color: var(--coral); font-weight: 700;">
+                Acessar área do corretor
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/index.js"></script>
+  <script src="js/global.js"></script>
+  <script src="navbar.js"></script>
+</body>
+</html>
